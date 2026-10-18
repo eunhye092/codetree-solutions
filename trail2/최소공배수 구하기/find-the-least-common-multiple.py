@@ -3,12 +3,10 @@ n, m = map(int, input().split())
 # Please write your code here.
 
 def LCM(n, m):
-    i = max(n,m)
-    while i >= max(n, m):
-        if i % n == 0 and i % m == 0:
-            lcm = i
-            break
-        i += 1
-    print(lcm)
+    for i in range(1, min(n, m) + 1):
+        if n % i == 0 and m % i == 0:
+            gcd = i
 
-LCM(n, m)
+    return n * m // gcd
+
+print(LCM(n, m))
